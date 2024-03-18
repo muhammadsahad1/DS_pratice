@@ -12,7 +12,7 @@ class Linkedlist{
     this.head = null
     this.tail = null
   }
-
+  
   prepend(data){
     let newNode = new Node(data)
     if(this.head === null) {
@@ -33,45 +33,67 @@ class Linkedlist{
       temp = temp.next
     }
   }
-
+  
   // 3 cases of delete (first,middle,end)
-
+  
   delete(data){
     let temp = this.head
     let prev = null 
     if(temp == !null && temp.data === data) {
-
+      
       this.head = temp.next
-    return 
+      return 
     }
     while(temp != null && temp.data != data) {
       prev = temp
       temp = temp.next  
     }
-
+    
     if(temp == null) {
       console.log("no data exists");
       return
     }
-
+    
     if(temp == this.tail) {
-      tail = prev
+      this.tail = prev
       this.tail.next = null
       return 
-
+      
     }
 
-    prev.next = temp.next
+    // DELETED
+    prev.next = temp.next  
     
   }
-  
-  }
 
-let list = new Linkedlist
-list.prepend(10)
-list.prepend(30)
-list.prepend(50)
-list.prepend(80)
-list.delete(50)
-list.display()
+  // INSERTION NODE
+  insertionAfter(nextTo , data){
+
+       let newNode = new Node(data)
+       let temp = this.head 
+       while (temp != null && temp.data != nextTo) {
+        temp  = temp.next
+       }
+       if(temp == null) {
+        console.log("not found that nodeData");
+        return 
+       }
+       if(temp === this.tail) {
+        temp.next = newNode
+        this.tail = newNode
+        return 
+       }
+       newNode.next = temp.next
+       temp.next = newNode
+  }
+}
+  
+  let list = new Linkedlist
+  list.prepend(10)
+  list.prepend(30)
+  list.prepend(50)
+  list.delete(80)
+  list.insertionAfter(50,600)
+  // list.delete(50)
+  list.display()
 
