@@ -14,6 +14,19 @@ class DoubelyLinkedList {
     this.tail = null;
   }
 
+  creatNode(data) {
+    let newNode = new Node(data)
+    if(this.head === null) {
+      this.head = newNode
+      this.tail = newNode
+      this.head.prev = null
+    }else {
+      newNode.next = this.head
+      this.head.prev = newNode
+      this.head = newNode
+    }
+  }
+
   prepend(data) {
     let newNode = new Node(data);
     if (this.head === null) {
@@ -88,14 +101,14 @@ class DoubelyLinkedList {
   append(data) {
     let newNode = new Node(data);
 
-    if (this.head === null) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      newNode.prev = this.tail;
-      this.tail = newNode;
-    }
+  if(this.head === null) {
+    this.head = newNode
+    this.tail = newNode
+  }else{
+    this.tail.next = newNode;
+    newNode.prev = this.tail
+    this.tail = newNode
+  }
   }
   // InsertionAfterNode
   insertionAfter(nodeData,data){
@@ -110,11 +123,27 @@ class DoubelyLinkedList {
     }
     newNode.prev = temp
     newNode.next = temp.next
-    
+    if(temp.next != null) {
+      
+    }
+  }
+
+  insertionBefore(nodeData,data) {
+    let newNode = new Node(data)
+    let temp = this.head
+    while(temp != null && temp.data != data) {
+      temp = temp.next;
+    }
+    if(temp == null){
+      console.log("is empty");
+      return 
+    }
+  
   }
 }
 
 let list = new DoubelyLinkedList();
+list.creatNode(19)
 list.prepend(10);
 list.prepend(90);
 list.prepend(30);

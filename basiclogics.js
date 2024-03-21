@@ -71,7 +71,7 @@
 // O(n) - Iterative
 // O(2^n) - Recursive
 
-//==========================
+// ==========================
 
 // RECURSIVE FACTORIAL
 
@@ -82,7 +82,7 @@
 //   return n * recursiveFactorial(n-1)
 // }
 
-// console.log(recursiveFactorial(5)) 120
+// console.log(recursiveFactorial(5)) 
 
 // Big O - O(n)
 
@@ -130,9 +130,9 @@
 //   }
 //   return -1
 // }
-// console.log(BinarySearch([-5,0,2,3,4],2)) 2
-// console.log(BinarySearch([1,2,3,4,5],2)) 2
-// console.log(BinarySearch([2,3,4,5,6],4)) 4
+// console.log(BinarySearch([-5,0,2,3,4],2)) 
+// console.log(BinarySearch([1,2,3,4,5],2)) 
+// console.log(BinarySearch([2,3,4,5,6],4)) 
 
 // Big O - O(logn)
 
