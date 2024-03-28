@@ -1,67 +1,16 @@
-// class Node {
-//   constructor(data) {
-//     this.data = data
-//     this.next = null
-//   }
-// }
-
-// class Stack {
-//   constructor(){
-//     this.top = null
-
-//   }
-
-//   push(Data){
-//     let newNode = new Node(Data)
-//     if(this.top === null) {
-//       this.top = newNode
-//     }else{
-//       newNode.next = this.top
-//       this.top = newNode
-//     }
-//   }
-
-//   pop(){
-//     if(this.top === null) {
-//       console.log("is empt");
-//       return
-//     }
-//     console.log("deleted value", this.top.data);
-//     this.top = this.top.next
-//   }
-//   display(){
-//     let current = this.top
-//     while(current != null)
-//     {
-//       console.log("node Data",current.data);
-//       current = current.next
-//     }
-//   }
-
-// }
-
-// let stack = new Stack()
-// stack.push(12)
-// stack.push(10)
-// stack.push(30)
-// stack.pop()
-// stack.display()
 
 
-
-class Node{
+class Node {
   constructor(data){
     this.data = data
     this.next = null
   }
 }
-
-class Stack {
+class stack{
   constructor(){
     this.top = null
   }
-
-  push(data) {
+  push(data){
     let newNode = new Node(data)
     if(this.top === null) {
       this.top = newNode
@@ -70,89 +19,64 @@ class Stack {
       this.top = newNode
     }
   }
-
   pop(){
-    if(this.top === null) {
-      console.log("is empty");
-      return
-    }
+   if(this.top === null) {
+    console.log("is epmpty");
+    return
+   }
+   else{
     this.top = this.top.next
-
+   }
   }
-
-  peek(data) {
-    if(this.top == null){
-      console.log("is epmty");
-      return
-    }
+  display(){
     let current = this.top
-    while(current.data != data){
-      current = current.next
-      if(current.data != data) {
-        console.log("data is not exists in this stack");
-        return
-      }
-
-    }
-    console.log("data :" ,current.data);
-
-  }
-
-  display (){
-    if(this.top === null) {
-      console.log("is empty");
-      return 
-    }
-    let current = this.top
-    while(current != null) {
-      console.log("data",current.data);
+    while(current != null){
+      console.log(current.data);
       current = current.next
     }
   }
-
 }
 
-let stack = new Stack()
-stack.push(50)
-stack.push(70)
-stack.push(90)
-stack.push(44)
-stack.peek(44)
-stack.pop()
-stack.display()
+let stackkk = new stack()
+stackkk.push(50)
+stackkk.push(70)
+stackkk.push(90)
+stackkk.push(44)
+// // stackkk.peek(44)
+// stackkk.display()
+stackkk.pop()
+stackkk.display()
 
 // ARRAY BASED STACK
 
+
 // class stack {
 //   constructor(){
-//     this.items = []
+//     this.item = []
 //   }
-
 //   push(data){
-
-//      this.items.push(data)
-  
-  
+//   this.item.push(data)
 // }
 
 // pop(){
-//   if(this.items === null) {
-//     return null
-//   }
-// return this.items.pop()
-// }
-
-// display(){
-//   if(this.items === 0) {
+//   if(this.item.length < 0) {
 //     console.log("is empty");
 //     return
 //   }
-//   for(let i  = this.items.length-1 ;i >=0; i--)
-//   {
-//     console.log(this.items[i]);
+//   return this.item.pop()
+// }
+// display(){
+//   if(this.item.length < 0){
+//     console.log("is empty");
+//     return
+//   }
+//   let n = this.item.length-1
+//   for(let i = n;i >=0;i--){
+//     console.log(this.item[i]);
 //   }
 // }
 // }
+
 
 // let arrayStack = new stack()
 // arrayStack.push(100)
@@ -160,3 +84,47 @@ stack.display()
 // arrayStack.push(90)
 // arrayStack.pop()
 // arrayStack.display()
+
+
+// class QueueWithTwoStacks{
+//   constructor(){
+//     this.stack1 = []
+//     this.stack2 = []
+//   }
+
+//   enqueue(item){
+
+//     this.stack1.push(item)
+//   }
+
+//   dequeue(){
+//     if(this.stack2.length === 0){
+//       while(this.stack1.length > 0){
+//         this.stack2.push(this.stack1.pop())
+//       }
+//     }
+//     return this.stack2.pop()
+//   }
+
+
+//   display(){
+//     if(this.stack1.length > 0){
+//       console.log(this.stack1);
+//     }
+//     if(this.stack2.length > 0){
+//       console.log(this.stack2);
+//     }
+//   }
+
+// }
+
+
+// let stackss = new QueueWithTwoStacks();
+// stackss.enqueue(10);
+// stackss.enqueue(60);
+// stackss.enqueue(77);
+// stackss.enqueue(90);
+// stackss.display(); // Display both stacks
+// stackss.dequeue();
+// stackss.display(); // Display both stacks after dequeue
+

@@ -16,25 +16,25 @@
 
 
 
-// function findTargetValue(array,target1,target2){
+function findTargetValue(array,target1,target2){
 
-// let findTarget1 = false
-// let findTarget2 = false
+let findTarget1 = false
+let findTarget2 = false
 
-// for(let i = 0;i<array.length;i++) {
-//   if(array[i] === target1) {
-//     findTarget1 = true
-//   }
-//   if(array[i] === target2) {
-//     findTarget2 = true
-//   }
-//   if(findTarget1 && findTarget2) {
-//     return true
-//   }
+for(let i = 0;i<array.length;i++) {
+  if(array[i] === target1) {
+    findTarget1 = true
+  }
+  if(array[i] === target2) {
+    findTarget2 = true
+  }
+  if(findTarget1 && findTarget2) {
+    return true
+  }
 
-// }
-// return false
-// }
+}
+return false
+}
 
-// const arr = [2,4,5,6,1]
-// console.log(findTargetValue(arr,5,1));
+const arr = [2,4,5,6,1]
+console.log(findTargetValue(arr,5,1));
