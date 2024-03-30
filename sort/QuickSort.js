@@ -79,76 +79,40 @@
 // }
 
 
-// function quickSort(arr,low = 0,high = arr.length){
-//   if(low < high) {
-//     let pivotIndex = partition(arr,low,high)
-//     quickSort(arr,low,pivotIndex)
-//     quickSort(arr,pivotIndex+1,high)
-//   }
-
-//   return arr
-// }
-
-// function partition(arr,low,high){
-//   let pivot = arr[low]
-//   let i = low 
-//   let j = high
-//   while( i < j) {
-//     do{
-//       i++  
-//     }while(arr[i] <= pivot)
-//     do{
-//       j--
-//     }while(arr[j] > pivot)
-//     if(i < j) {
-//       let temp = arr[i]
-//       arr[i] = arr[j]
-//       arr[j] = temp
-//     }
-//   }
-//   let temp = arr[low]
-//   arr[low] = arr[j]
-//   arr[j] = temp
-//   return j   //  pivot index          
-
-// }
-
-
 function quickSort(arr,low = 0,high = arr.length){
 
-  if(low < high)
-  {
-    let pivotIndex = partion(arr,low,high)
+  if(low < high){
+
+    let pivotIndex = partition(arr,low,high)
     quickSort(arr,pivotIndex+1,high)
     quickSort(arr,low,pivotIndex)
+
   }
   return arr
-  
+
 }
 
-function partion(arr,low,high){
+function partition(arr,low,high){
   let pivot = arr[low]
   let i = low
   let j = high
-  while(i < j)
-  {
-    do {
-      i++
-    }while(arr[i] <= pivot)
-    do{
-      j--
-    }while(arr[j] > pivot)
-    if(i < j)
-    {
-      let temp = arr[i]
-      arr[i] = arr[j]
-      arr[j] = temp
-    }
+  while(i < j){
+  do{
+    i++
+  }while(arr[i] <= pivot)
+  do{
+    j--
+  }while(arr[j] > pivot)
+  if(i < j){
+    let temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
   }
-  let temp = arr[low]
-  arr[low] = arr[j]
-  arr[j] = temp
-  return j
+}
+let temp = arr[low]
+arr[low] = arr[j]
+arr[j] = temp
+return j
 }
 
 const array = [12, 4, 5, 77, 32, 21];

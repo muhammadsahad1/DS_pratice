@@ -77,54 +77,56 @@
 
 
 class Node{
-constructor(data){
-  this.data = data
-  this.next = null
+  constructor(data){
+    this.data = data
+    this.next = null
+  }
 }
-}
-
 class queue {
   constructor(){
     this.front = null
     this.rear = null
   }
-  enqueue(data) {
+  enqueue(data){
     let newNode = new Node(data)
-    if(this.front === null){
+    if(this.front == null){
       this.front = this.rear = newNode
-    }else {
-      this.rear.next = newNode
-      this.rear = newNode
+    }else{
+     this.rear.next = newNode
+     this.rear = newNode
     }
   }
-
   dequeue(){
-    if(this.front === null){
+    if(this.front == null){
       console.log("is empty");
       return
     }
-    
-      this.front = this.front.next
-    
-    if(this.front == null) {
+    this.front = this.front.next
+    if(this.front == null){
       this.rear = null
     }
   }
+
   peek(data){
-    let current = this.front
-    while(current != null && current.data != data) {
-      current = current.next
+    if(this.front == null) {
+      console.log("is empty");
+      return
     }
-    console.log(current.data)
+    let current = this.front
+    while (current != null && current.data != data) {
+      current = current.next
+    } 
+    return console.log("searched data",current.data)
   }
+
   display(){
     if(this.front === null) {
-      console.log("queue is empty");
-    return
+      console.log("is empty");
+      return
     }
     let current = this.front
-    while(current != null) {
-      console.log("queue data",current.data);
+    while(current != null){
+      console.log(current.data);
       current = current.next
     }
   }

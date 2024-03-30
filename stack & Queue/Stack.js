@@ -1,11 +1,11 @@
 
-
-class Node {
+class Node{
   constructor(data){
     this.data = data
     this.next = null
   }
 }
+
 class stack{
   constructor(){
     this.top = null
@@ -14,26 +14,31 @@ class stack{
     let newNode = new Node(data)
     if(this.top === null) {
       this.top = newNode
-    }else {
+      this.top.next = null
+    }else{
       newNode.next = this.top
       this.top = newNode
     }
   }
   pop(){
-   if(this.top === null) {
-    console.log("is epmpty");
-    return
-   }
-   else{
-    this.top = this.top.next
-   }
+    if(this.top === null) {
+      console.log("is empty");
+      return 
+    }
+      this.top = this.top.next
+    
+    
   }
   display(){
-    let current = this.top
-    while(current != null){
-      console.log(current.data);
-      current = current.next
-    }
+  if(this.top === null) {
+    console.log("empty");
+    return
+  }
+  let current = this.top
+  while(current != null) {
+    console.log(current.data);
+    current = current.next
+  }
   }
 }
 
