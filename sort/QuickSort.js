@@ -115,5 +115,3 @@ arr[j] = temp
 return j
 }
 
-const array = [12, 4, 5, 77, 32, 21];
-console.log(quickSort(array));
